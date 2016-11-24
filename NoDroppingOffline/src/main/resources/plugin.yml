@@ -1,0 +1,5 @@
+name: NoDroppingOffline
+main: com.minetexas.nodroppingoffline.NoDroppingOffline
+version: 0.1
+author: ataranlen
+description: Prevent players from duping via dropping items and dcing.
