@@ -26,7 +26,7 @@ public class DropListener implements Listener {
 	@EventHandler(priority = EventPriority.HIGHEST)
     public void onPlayerInventoryClickEvent(InventoryClickEvent e) {
 		Inventory source = e.getInventory();
-		if (source.getType() == InventoryType.ENDER_CHEST) {
+		if (source.getType() != InventoryType.CHEST) {
 			return;
 		}
 		
