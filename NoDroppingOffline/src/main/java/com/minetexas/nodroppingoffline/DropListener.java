@@ -18,9 +18,6 @@ import org.bukkit.event.player.PlayerRespawnEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
-import com.minetexas.util.MTLog;
-
-
 
 public class DropListener implements Listener {
 	@EventHandler(priority = EventPriority.HIGHEST)
@@ -46,12 +43,9 @@ public class DropListener implements Listener {
 			return;
 		}
 
-		if (checkMat(itemStack.getType())) {
 
-			if (itemStack.getAmount() >= 2) {
-			itemStack.setAmount(1);
+		if (checkMat(itemStack.getType(), itemStack.getAmount())) {
 			e.setCancelled(true);
-			}
 		}
 	}
 	
@@ -67,12 +61,9 @@ public class DropListener implements Listener {
 			return;
 		}
 
-		if (checkMat(itemStack.getType())) {
 
-			if (itemStack.getAmount() >= 2) {
-			itemStack.setAmount(1);
+		if (checkMat(itemStack.getType(), itemStack.getAmount())) {
 			e.setCancelled(true);
-			}
 		}
 	}
 	
@@ -89,12 +80,9 @@ public class DropListener implements Listener {
 			e.setCancelled(true);
 			return;
 		}
-		if (checkMat(itemStack.getType())) {
 
-			if (itemStack.getAmount() >= 2) {
-			itemStack.setAmount(1);
+		if (checkMat(itemStack.getType(), itemStack.getAmount())) {
 			e.setCancelled(true);
-			}
 		}
 	
 	}
@@ -115,48 +103,13 @@ public class DropListener implements Listener {
 			e.setCancelled(true);
 			return;
 		}
-		if (checkMat(itemStack.getType())) {
-
-			if (itemStack.getAmount() >= 2) {
-			itemStack.setAmount(1);
+		if (checkMat(itemStack.getType(), itemStack.getAmount())) {
 			e.setCancelled(true);
-			}
 		}
 	}
 	
-	public boolean checkMat(Material mat) {
-
-		if (mat == Material.DIAMOND_AXE || 
-				mat == Material.DIAMOND_CHESTPLATE ||
-				mat == Material.DIAMOND_HELMET ||
-				mat == Material.DIAMOND_LEGGINGS ||
-				mat == Material.DIAMOND_PICKAXE ||
-				mat == Material.DIAMOND_SWORD ||
-				mat == Material.DIAMOND_HELMET ||
-				mat == Material.DIAMOND_SPADE ||
-				mat == Material.BLACK_SHULKER_BOX ||
-				mat == Material.BLUE_SHULKER_BOX ||
-				mat == Material.BROWN_SHULKER_BOX ||
-				mat == Material.CYAN_SHULKER_BOX ||
-				mat == Material.GRAY_SHULKER_BOX ||
-				mat == Material.GREEN_SHULKER_BOX ||
-				mat == Material.LIGHT_BLUE_SHULKER_BOX ||
-				mat == Material.LIME_SHULKER_BOX ||
-				mat == Material.MAGENTA_SHULKER_BOX ||
-				mat == Material.ORANGE_SHULKER_BOX ||
-				mat == Material.PINK_SHULKER_BOX ||
-				mat == Material.PURPLE_SHULKER_BOX ||
-				mat == Material.RED_SHULKER_BOX ||
-				mat == Material.SILVER_SHULKER_BOX ||
-				mat == Material.WHITE_SHULKER_BOX ||
-				mat == Material.YELLOW_SHULKER_BOX ||
-				mat == Material.TOTEM ||
-				mat == Material.SKULL_ITEM) {
-			
-				
-			return true;
-		}
-		return false;
+	public boolean checkMat(Material mat, Integer count) {
+		return (mat.getMaxStackSize() < count);
 	}
 			
 	

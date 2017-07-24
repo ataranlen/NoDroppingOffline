@@ -1,6 +1,6 @@
 name: NoDroppingOffline
 main: com.minetexas.nodroppingoffline.NoDroppingOffline
-version: 0.2
+version: 0.3
 author: ataranlen
 description: Prevent players from duping via dropping items and dcing.
 depend: [ProtocolLib]
