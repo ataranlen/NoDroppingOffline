@@ -10,7 +10,6 @@ import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
-import org.bukkit.event.inventory.InventoryDragEvent;
 import org.bukkit.event.inventory.InventoryMoveItemEvent;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.event.player.PlayerDropItemEvent;
@@ -44,7 +43,6 @@ public class DropListener implements Listener {
 		if (itemStack.getAmount() >= 65) {
 			itemStack.setAmount(1);
 			e.setCancelled(true);
-			MTLog.debug("PlayerDropItemEvent: stacksize fail");
 			return;
 		}
 
@@ -52,7 +50,6 @@ public class DropListener implements Listener {
 
 			if (itemStack.getAmount() >= 2) {
 			itemStack.setAmount(1);
-			MTLog.debug("PlayerDropItemEvent: typeFail");
 			e.setCancelled(true);
 			}
 		}
@@ -67,7 +64,6 @@ public class DropListener implements Listener {
 		if (itemStack.getAmount() >= 65) {
 			itemStack.setAmount(1);
 			e.setCancelled(true);
-			MTLog.debug("InventoryClickEvent: stacksize fail");
 			return;
 		}
 
@@ -75,7 +71,6 @@ public class DropListener implements Listener {
 
 			if (itemStack.getAmount() >= 2) {
 			itemStack.setAmount(1);
-			MTLog.debug("InventoryClickEvent: typeFail");
 			e.setCancelled(true);
 			}
 		}
@@ -92,14 +87,12 @@ public class DropListener implements Listener {
 		if (itemStack.getAmount() >= 65) {
 			itemStack.setAmount(1);
 			e.setCancelled(true);
-			MTLog.debug("InventoryMoveItemEvent: stacksize fail");
 			return;
 		}
 		if (checkMat(itemStack.getType())) {
 
 			if (itemStack.getAmount() >= 2) {
 			itemStack.setAmount(1);
-			MTLog.debug("InventoryMoveItemEvent: typeFail");
 			e.setCancelled(true);
 			}
 		}
@@ -120,14 +113,12 @@ public class DropListener implements Listener {
 		if (itemStack.getAmount() >= 65) {
 			itemStack.setAmount(1);
 			e.setCancelled(true);
-			MTLog.debug("PlayerPickupItemEvent: stacksize fail");
 			return;
 		}
 		if (checkMat(itemStack.getType())) {
 
 			if (itemStack.getAmount() >= 2) {
 			itemStack.setAmount(1);
-			MTLog.debug("PlayerPickupItemEvent: typeFail");
 			e.setCancelled(true);
 			}
 		}
