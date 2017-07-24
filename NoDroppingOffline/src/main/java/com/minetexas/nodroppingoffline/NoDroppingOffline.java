@@ -31,6 +31,9 @@ public class NoDroppingOffline extends JavaPlugin {
 	    		        if (event.getPacketType() == 
 	    		                PacketType.Play.Client.AUTO_RECIPE ) {
 	    		            event.setCancelled(true);
+                                    // Instead of sending a transaction packet, we can do this instead!
+                                    // (I couldn't get sending a transaction packet with false, this this will have to do :( )
+                                    event.getPlayer().updateInventory();
 	    		        }
 	    		    }
 	    		});
