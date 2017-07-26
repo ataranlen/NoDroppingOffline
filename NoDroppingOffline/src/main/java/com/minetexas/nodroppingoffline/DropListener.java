@@ -37,15 +37,9 @@ public class DropListener implements Listener {
 		if (itemStack == null) {
 			return;
 		}
-		if (itemStack.getAmount() >= 65) {
-			itemStack.setAmount(1);
-			e.setCancelled(true);
-			return;
-		}
-
 
 		if (checkMat(itemStack.getType(), itemStack.getAmount())) {
-			e.setCancelled(true);
+			itemStack.setAmount(1);
 		}
 	}
 	
@@ -55,15 +49,9 @@ public class DropListener implements Listener {
 		if (itemStack == null) {
 			return;
 		}
-		if (itemStack.getAmount() >= 65) {
-			itemStack.setAmount(1);
-			e.setCancelled(true);
-			return;
-		}
-
 
 		if (checkMat(itemStack.getType(), itemStack.getAmount())) {
-			e.setCancelled(true);
+			itemStack.setAmount(1);
 		}
 	}
 	
@@ -74,17 +62,10 @@ public class DropListener implements Listener {
 		if (itemStack == null) {
 			return;
 		}
-		
-		if (itemStack.getAmount() >= 65) {
-			itemStack.setAmount(1);
-			e.setCancelled(true);
-			return;
-		}
 
 		if (checkMat(itemStack.getType(), itemStack.getAmount())) {
-			e.setCancelled(true);
+			itemStack.setAmount(1);
 		}
-	
 	}
 	
 	@EventHandler(priority = EventPriority.HIGHEST)
@@ -98,13 +79,8 @@ public class DropListener implements Listener {
 			return;
 		}
 		
-		if (itemStack.getAmount() >= 65) {
-			itemStack.setAmount(1);
-			e.setCancelled(true);
-			return;
-		}
 		if (checkMat(itemStack.getType(), itemStack.getAmount())) {
-			e.setCancelled(true);
+			itemStack.setAmount(1);
 		}
 	}
 	
